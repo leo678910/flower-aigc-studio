@@ -1,0 +1,21 @@
+# Local skill credentials
+config.toml
+**/config.toml
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Local outputs and scratch files
+temp/
+tmp/
+output/
+cloud-fashion-results/
+**/cloud-fashion-results/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
