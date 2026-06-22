@@ -1,0 +1,4 @@
+config.toml
+temp/
+__pycache__/
+*.py[cod]

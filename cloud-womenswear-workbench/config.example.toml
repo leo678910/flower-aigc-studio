@@ -1,0 +1,14 @@
+# Optional persistent local configuration.
+# You can also paste server_url and api_key directly in chat. The Agent will
+# save them to config.toml by calling the configure command.
+# API Key purchase/trial contact: wx:catwde2
+#
+# Do not commit a filled config.toml to a public repository.
+
+[service]
+server_url = "https://your-fashion-server.example.com"
+api_key = "your_api_key"
+
+[download]
+# Optional. Leave commented to use ./temp/cloud-womenswear-results.
+# dir = "C:/path/to/cloud-womenswear-results"

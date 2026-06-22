@@ -1,0 +1,4 @@
+interface:
+  display_name: "通用女装云工作台"
+  short_description: "通过统一入口查询价格、选择技能并运行多种女装云端工作流"
+  default_prompt: "使用 $cloud-womenswear-workbench 查看可用女装云技能，并按我的需求选择合适的 skill_id。"

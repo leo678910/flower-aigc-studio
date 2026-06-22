@@ -8,17 +8,18 @@
 
 | Skill | 用途 |
 | --- | --- |
-| `cloud-ai-fashion-video-packager` | 上传女装商品图到云端服务，返回商品白底图、封面图、首帧图、图生视频提示词、小红书/抖音标题文案标签。 |
+| `cloud-womenswear-workbench` | 推荐入口。一个薄客户端发现、询价并运行多个女装云 skill，当前支持对镜自拍、自动街拍和交互式定制街拍。 |
+| `cloud-ai-fashion-video-packager` | 旧版单路由客户端。上传女装商品图并返回白底图、封面图、首帧图、视频提示词和种草文案。 |
 
 ## Quick Start
 
-### 1. 安装 Skill
+### 1. 安装统一女装工作台
 
 在 Codex 对话里直接说：
 
 ```text
 请安装这个 skill：
-https://github.com/leo678910/flower-aigc-studio/tree/main/cloud-ai-fashion-video-packager
+https://github.com/leo678910/flower-aigc-studio/tree/main/cloud-womenswear-workbench
 ```
 
 或者在已启用 `skill-installer` 的 Codex 环境里，用它提供的安装脚本安装：
@@ -26,55 +27,62 @@ https://github.com/leo678910/flower-aigc-studio/tree/main/cloud-ai-fashion-video
 ```bash
 python scripts/install-skill-from-github.py \
   --repo leo678910/flower-aigc-studio \
-  --path cloud-ai-fashion-video-packager
+  --path cloud-womenswear-workbench
 ```
 
 安装完成后，重启 Codex，让新 skill 生效。
 
-### 2. 首次配置服务地址和 API Key
+### 2. 购买体验 API Key
 
-第一次使用时，如果还没有配置服务地址和 API Key，Agent 会让你在对话框里直接发送：
+公开仓库不包含服务器地址和 API Key。请联系服务提供方购买或开通体验：
+
+```text
+wx:catwde2
+```
+
+### 3. 在对话框完成首次配置
+
+拿到服务地址和 API Key 后，只需要在 Codex 对话框发送：
 
 ```text
 server_url=https://your-fashion-server.example.com
 api_key=your_api_key
 ```
 
-Agent 会自动把这两个值保存到本地 `config.toml`，以后就不用每次重复输入。
+Agent 会自动写入该 skill 本地目录的 `config.toml`，不会回显完整 API Key。以后使用时不需要重复输入。
 
-也可以手动复制 skill 目录里的 `config.example.toml` 为 `config.toml`，然后填写：
+`config.toml` 已被 `.gitignore` 排除，它是客户本机的私密配置，禁止提交到公开仓库。
 
-```toml
-[service]
-server_url = "https://your-fashion-server.example.com"
-api_key = "your_api_key"
-```
+### 4. 选择女装工作流
 
-注意：`config.toml` 是本地私密配置，不要提交到公开仓库。
-
-### 3. 使用云端女装工作流
-
-安装并配置后，在 Codex 对话里上传或指定一张女装商品图，然后说：
+安装并配置后，可以先查看服务器当前提供的 skill 和实时价格：
 
 ```text
-用 cloud-ai-fashion-video-packager 跑一遍云端女装工作流。
+用 cloud-womenswear-workbench 查看当前可用的女装技能和价格。
 ```
 
-正常会返回：
-
-- 商品白底图
-- 封面图
-- 9:16 首帧图
-- 图生视频提示词
-- 标题、描述、标签文案
-
-## 联系方式
-
-体验包、API Key、服务开通：
+也可以直接上传女装商品图并提出需求：
 
 ```text
-wx:catwde2
+用自动街拍基础版处理这张女装图。
 ```
+
+```text
+用高级定制街拍处理这张女装图，每一步让我确认。
+```
+
+```text
+用对镜自拍素材包处理这张女装图。
+```
+
+服务器以后增加新的 `skill_id` 时，薄客户端无需重写。
+
+## 安全说明
+
+- 仓库只发布薄客户端，不包含云端工作流提示词、模型供应商密钥、客户 API Key 或计费逻辑。
+- 客户凭据保存在本地 `config.toml`。
+- Agent 不应在回复中打印完整 API Key。
+- 每次提交计费任务前，客户端应查询服务器当前价格，不依赖本地记忆价格。
 
 ## 许可证
 
