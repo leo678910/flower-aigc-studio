@@ -9,7 +9,6 @@
 | Skill | 用途 |
 | --- | --- |
 | `cloud-womenswear-workbench` | 推荐入口。一个薄客户端发现、询价并运行多个女装云 skill，当前支持对镜自拍、自动街拍和交互式定制街拍。 |
-| `cloud-ai-fashion-video-packager` | 旧版单路由客户端。上传女装商品图并返回白底图、封面图、首帧图、视频提示词和种草文案。 |
 
 ## Quick Start
 

@@ -137,8 +137,8 @@ WOMENSWEAR_CLOUD_DOWNLOAD_DIR
 WOMENSWEAR_CLOUD_CONFIG
 ```
 
-The client may reuse an existing street-shot or mirror-selfie `config.toml`.
-Configuration precedence is command arguments, environment variables, then
-TOML configuration.
+The client may reuse an existing street-shot `config.toml`. Configuration
+precedence is command arguments, environment variables, then TOML
+configuration.
 
 Never print the complete API Key in the final response.

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Cloud AI Fashion Video Packager"
-  short_description: "Call the agent-facing fashion video package server."
-  default_prompt: "Use this skill to upload a women's clothing product image to the AI fashion video server. If no service URL or API key is configured, ask me to paste them in this chat, save them to config.toml, then return the product image, cover, first frame, video prompt, and platform copy."

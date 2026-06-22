@@ -97,7 +97,6 @@ def _default_config_paths() -> list[Path]:
     paths = [
         SKILL_ROOT / "config.toml",
         codex_home / "skills" / "cloud-flower-womenswear-streetshot" / "config.toml",
-        codex_home / "skills" / "cloud-ai-fashion-video-packager" / "config.toml",
     ]
     appdata = os.getenv("APPDATA")
     if appdata:
